@@ -10,7 +10,7 @@ module "vpc" {
   environment     = "dev"
   cidr_block      = "10.22.0.0/16"
   public_subnets  = { "us-east-1a" : "10.22.0.0/18", "us-east-1b" : "10.22.64.0/18" }
-  private_subnets = var.vpc_private_subnets
+  private_subnets = { "us-east-1a" : "10.22.128.0/18", "us-east-1b" : "10.22.192.0/18" }
 }
 ```
 
