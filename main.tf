@@ -21,9 +21,9 @@ resource "aws_subnet" "public" {
   availability_zone       = keys(var.public_subnets)[count.index]
   map_public_ip_on_launch = true
 
-  tags = {
+  tags = merge({
     Name = join("-", [local.tag_name, "public", "subnet"])
-  }
+  }, var.common_tags, var.public_subnet_tags)
 
   depends_on = [aws_vpc.this]
 }
@@ -35,9 +35,9 @@ resource "aws_subnet" "private" {
   cidr_block        = values(var.private_subnets)[count.index]
   availability_zone = keys(var.private_subnets)[count.index]
 
-  tags = {
+  tags = merge({
     Name = join("-", [local.tag_name, "private", "subnet"])
-  }
+  }, var.common_tags, var.private_subnet_tags)
 
   depends_on = [aws_vpc.this]
 }

@@ -42,3 +42,21 @@ variable "enable_dns_hostnames" {
   type        = bool
   default     = false
 }
+
+variable "common_tags" {
+  description = "Common list of tags"
+  type        = map(string)
+  default     = {}
+}
+
+variable "public_subnet_tags" {
+  description = "List of tags to use in public subnet"
+  type        = map(string)
+  default     = {}
+}
+
+variable "private_subnet_tags" {
+  description = "List of tags to use in private subnet"
+  type        = map(string)
+  default     = {}
+}
