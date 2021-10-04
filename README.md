@@ -47,6 +47,9 @@ module "vpc" {
 | <a  name="input_enable_private_subnet"></a>  [enable\_private\_subnet](#input\_enable\_private\_subnet)| Enable creating private subnet with NAT gateway | `bool` | true | no |
 | <a  name="input_enable_dns_hostnames"></a>  [enable\_dns\_hostnames](#input\_enable\_dns\_hostnames) | Should be true to enable DNS hostnames in the VPC | `bool` | true | no |
 | <a  name="input_enable_dns_support"></a>  [enable\_dns\_support](#input\_enable\_dns\_support) | Should be true to enable DNS support in the VPC | `bool` | false | no |
+| <a  name="input_enable_dns_support"></a>  [common\_tags](#input\_common\_tags) | Common list of tags | `map(string)` | {} | no |
+| <a  name="input_enable_dns_support"></a>  [private\_subnet\_tags](#input\_private\_subnet\_tags) | List of tags to use in private subnet | `map(string)` | {} | no |
+| <a  name="input_enable_dns_support"></a>  [public\_subnet\_tags](#input\_public\_subnet\_tags) | List of tags to use in public subnet | `map(string)` | {} | no |
 
 ## Outputs
 
